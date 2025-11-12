@@ -19,32 +19,140 @@
         .bg-grid-slate-100 {
             background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23f1f5f9' fill-opacity='0.4'/%3E%3C/svg%3E");
         }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Side navigation styles */
+        .side-nav-link {
+            position: relative;
+            padding-left: 1rem;
+        }
+        .side-nav-link.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .side-nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 70%;
+            background: #2563eb;
+            border-radius: 2px;
+        }
+
+        /* Mobile menu animation */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        .mobile-menu {
+            animation: slideIn 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="bg-white">
 
-    <!-- Navigation -->
+    <!-- Top Navigation Bar (Mobile Header + Desktop) -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     BriefFlow Design System
                 </h1>
-                <div class="flex items-center space-x-6 text-sm">
-                    <a href="#foundations" class="text-gray-600 hover:text-gray-900 transition-colors">Foundations</a>
-                    <a href="#atoms" class="text-gray-600 hover:text-gray-900 transition-colors">Atoms</a>
-                    <a href="#molecules" class="text-gray-600 hover:text-gray-900 transition-colors">Molecules</a>
-                    <a href="#organisms" class="text-gray-600 hover:text-gray-900 transition-colors">Organisms</a>
-                    <a href="#templates" class="text-gray-600 hover:text-gray-900 transition-colors">Templates</a>
-                </div>
+                <!-- Hamburger Menu Button (Mobile Only) -->
+                <button
+                    id="mobile-menu-button"
+                    class="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    aria-label="Toggle menu"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <div class="absolute inset-0 bg-grid-slate-100"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden hidden"
+        onclick="toggleMobileMenu()"
+    ></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <aside
+        id="mobile-sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 lg:hidden transform -translate-x-full transition-transform duration-300"
+    >
+        <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+            <h2 class="text-lg font-bold text-gray-900">Navigation</h2>
+            <button
+                onclick="toggleMobileMenu()"
+                class="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                aria-label="Close menu"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="p-4 overflow-y-auto h-[calc(100%-4rem)]">
+            <ul class="space-y-1">
+                <li><a href="#foundations" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded-md nav-link" onclick="toggleMobileMenu()">Foundations</a></li>
+                <li><a href="#atoms" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded-md nav-link" onclick="toggleMobileMenu()">Atoms</a></li>
+                <li><a href="#molecules" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded-md nav-link" onclick="toggleMobileMenu()">Molecules</a></li>
+                <li><a href="#organisms" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded-md nav-link" onclick="toggleMobileMenu()">Organisms</a></li>
+                <li><a href="#templates" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded-md nav-link" onclick="toggleMobileMenu()">Templates</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Desktop Side Navigation -->
+    <aside class="hidden lg:block fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-white border-r border-gray-200 z-30 overflow-y-auto">
+        <nav class="p-6">
+            <ul class="space-y-1">
+                <li>
+                    <a href="#foundations" class="side-nav-link block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors nav-link">
+                        Foundations
+                    </a>
+                </li>
+                <li>
+                    <a href="#atoms" class="side-nav-link block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors nav-link">
+                        Atoms
+                    </a>
+                </li>
+                <li>
+                    <a href="#molecules" class="side-nav-link block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors nav-link">
+                        Molecules
+                    </a>
+                </li>
+                <li>
+                    <a href="#organisms" class="side-nav-link block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors nav-link">
+                        Organisms
+                    </a>
+                </li>
+                <li>
+                    <a href="#templates" class="side-nav-link block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors nav-link">
+                        Templates
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="lg:ml-64">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+            <div class="absolute inset-0 bg-grid-slate-100"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
             <div class="text-center">
                 <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
                     Transform
@@ -1934,8 +2042,58 @@
             </div>
         </div>
     </footer>
+    </div><!-- End Main Content Wrapper -->
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+
+            if (mobileMenu && mobileSidebar) {
+                mobileMenu.classList.toggle('hidden');
+                mobileSidebar.classList.toggle('-translate-x-full');
+            }
+        }
+
+        // Setup mobile menu button
+        document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+        // Active navigation link tracking
+        function updateActiveNavLink() {
+            const sections = ['foundations', 'atoms', 'molecules', 'organisms', 'templates'];
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Update active link on scroll
+        window.addEventListener('scroll', updateActiveNavLink);
+        // Update on page load
+        updateActiveNavLink();
+
         // Update slider value displays
         const slider1 = document.getElementById('slider-1');
         const slider1Value = document.getElementById('slider-1-value');
