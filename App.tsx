@@ -312,6 +312,17 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen font-sans flex flex-col">
+      {/* Design System Link */}
+      <a
+        href="/design-system.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-6 right-6 bg-primary text-white px-md py-sm rounded-lg shadow-lg hover:bg-primary/90 transition-colors text-caption font-medium z-50"
+        title="View Design System"
+      >
+        Design System
+      </a>
+
       <main className="flex-grow max-w-[1400px] w-full mx-auto py-xl px-lg relative">
         <div className="mb-xl">
           <div 
