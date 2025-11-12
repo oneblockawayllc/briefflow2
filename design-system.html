@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BriefFlow Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Grid pattern for background */
+        .bg-grid-slate-100 {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23f1f5f9' fill-opacity='0.4'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    BriefFlow Design System
+                </h1>
+                <div class="flex items-center space-x-6 text-sm">
+                    <a href="#foundations" class="text-gray-600 hover:text-gray-900 transition-colors">Foundations</a>
+                    <a href="#atoms" class="text-gray-600 hover:text-gray-900 transition-colors">Atoms</a>
+                    <a href="#molecules" class="text-gray-600 hover:text-gray-900 transition-colors">Molecules</a>
+                    <a href="#organisms" class="text-gray-600 hover:text-gray-900 transition-colors">Organisms</a>
+                    <a href="#templates" class="text-gray-600 hover:text-gray-900 transition-colors">Templates</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <div class="absolute inset-0 bg-grid-slate-100"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+                    Transform
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Messy Inputs</span>
+                    <br />into Beautiful Products
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive design system showcasing the visual language of BriefFlow
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundations Section -->
+    <section id="foundations" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-sm font-medium mb-4">
+                    Foundations
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Visual Foundations</h2>
+                <p class="text-xl text-gray-600">Core colors, gradients, and visual elements</p>
+            </div>
+
+            <!-- Brand Gradients -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Brand Gradients</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-32 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+                        <div class="p-4 bg-white">
+                            <p class="font-mono text-sm text-gray-700">from-blue-600 to-purple-600</p>
+                            <p class="text-sm text-gray-500 mt-1">Primary Brand Gradient</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-32 bg-gradient-to-br from-slate-50 via-white to-blue-50"></div>
+                        <div class="p-4 bg-white">
+                            <p class="font-mono text-sm text-gray-700">from-slate-50 via-white to-blue-50</p>
+                            <p class="text-sm text-gray-500 mt-1">Background Gradient</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-32 bg-gradient-to-r from-blue-50 to-purple-50"></div>
+                        <div class="p-4 bg-white">
+                            <p class="font-mono text-sm text-gray-700">from-blue-50 to-purple-50</p>
+                            <p class="text-sm text-gray-500 mt-1">Section Background</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Color Palette</h3>
+
+                <!-- Primary Colors -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Primary - Blue</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-blue-50 border border-blue-100 mb-2"></div>
+                            <p class="text-sm font-mono">blue-50</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-blue-100 border border-blue-200 mb-2"></div>
+                            <p class="text-sm font-mono">blue-100</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-blue-200 border border-blue-300 mb-2"></div>
+                            <p class="text-sm font-mono">blue-200</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-blue-600 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-blue-600 rounded">blue-600</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-blue-700 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-blue-700 rounded">blue-700</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Colors -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Secondary - Purple</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-purple-50 border border-purple-100 mb-2"></div>
+                            <p class="text-sm font-mono">purple-50</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-purple-100 border border-purple-200 mb-2"></div>
+                            <p class="text-sm font-mono">purple-100</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-purple-200 border border-purple-300 mb-2"></div>
+                            <p class="text-sm font-mono">purple-200</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-purple-600 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-purple-600 rounded">purple-600</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gray Scale -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Neutrals - Gray</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-slate-50 border border-gray-200 mb-2"></div>
+                            <p class="text-sm font-mono">slate-50</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-gray-200 border border-gray-300 mb-2"></div>
+                            <p class="text-sm font-mono">gray-200</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-gray-500 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-gray-500 rounded">gray-500</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-gray-600 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-gray-600 rounded">gray-600</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-20 rounded-lg bg-gray-900 mb-2"></div>
+                            <p class="text-sm font-mono text-white bg-gray-900 rounded">gray-900</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semantic Colors -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Red - Danger/Problem -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-4">Red - Problem</h4>
+                        <div class="space-y-2">
+                            <div class="h-16 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">red-50</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-red-100 border border-red-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">red-100</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-red-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">red-200</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-red-600 flex items-center justify-center">
+                                <span class="text-sm font-mono text-white">red-600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orange - Warning -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-4">Orange - Warning</h4>
+                        <div class="space-y-2">
+                            <div class="h-16 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">orange-50</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-orange-100 border border-orange-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">orange-100</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-orange-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">orange-200</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-orange-600 flex items-center justify-center">
+                                <span class="text-sm font-mono text-white">orange-600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yellow - Caution -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-4">Yellow - Caution</h4>
+                        <div class="space-y-2">
+                            <div class="h-16 rounded-lg bg-yellow-50 border border-yellow-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">yellow-50</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-yellow-100 border border-yellow-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">yellow-100</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-yellow-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">yellow-200</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-yellow-600 flex items-center justify-center">
+                                <span class="text-sm font-mono text-white">yellow-600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Green - Success -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-4">Green - Success</h4>
+                        <div class="space-y-2">
+                            <div class="h-16 rounded-lg bg-green-50 border border-green-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">green-50</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-green-100 border border-green-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">green-100</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-green-200 flex items-center justify-center">
+                                <span class="text-sm font-mono">green-200</span>
+                            </div>
+                            <div class="h-16 rounded-lg bg-green-800 flex items-center justify-center">
+                                <span class="text-sm font-mono text-white">green-800</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Tokens -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Design Tokens</h3>
+
+                <!-- Spacing Scale -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Spacing Scale</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-4">
+                            <div class="w-1 bg-blue-600" style="height: 4px;"></div>
+                            <span class="font-mono text-sm">--spacing-xs: 4px</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 bg-blue-600" style="height: 8px;"></div>
+                            <span class="font-mono text-sm">--spacing-sm: 8px</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-3 bg-blue-600" style="height: 12px;"></div>
+                            <span class="font-mono text-sm">--spacing-md: 12px</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-4 bg-blue-600" style="height: 16px;"></div>
+                            <span class="font-mono text-sm">--spacing-lg: 16px</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-6 bg-blue-600" style="height: 24px;"></div>
+                            <span class="font-mono text-sm">--spacing-xl: 24px</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 bg-blue-600" style="height: 32px;"></div>
+                            <span class="font-mono text-sm">--spacing-2xl: 32px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography Scale -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-4">Typography Scale</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-[2rem] leading-[1.4] font-bold">Heading 1</p>
+                            <p class="text-sm text-gray-500 font-mono">.text-h1: 2rem / 1.4 / bold</p>
+                        </div>
+                        <div>
+                            <p class="text-[1.5rem] leading-[1.4] font-semibold">Heading 2</p>
+                            <p class="text-sm text-gray-500 font-mono">.text-h2: 1.5rem / 1.4 / semibold</p>
+                        </div>
+                        <div>
+                            <p class="text-[1.25rem] leading-[1.4] font-semibold">Heading 3</p>
+                            <p class="text-sm text-gray-500 font-mono">.text-h3: 1.25rem / 1.4 / semibold</p>
+                        </div>
+                        <div>
+                            <p class="text-[1rem] leading-[1.6]">Body Text</p>
+                            <p class="text-sm text-gray-500 font-mono">.text-body: 1rem / 1.6</p>
+                        </div>
+                        <div>
+                            <p class="text-[0.875rem] leading-[1.5]">Caption</p>
+                            <p class="text-sm text-gray-500 font-mono">.text-caption: 0.875rem / 1.5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shadows & Effects -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Shadows & Effects</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+                        <div class="text-center">
+                            <p class="font-mono text-sm text-gray-700">shadow-lg</p>
+                            <p class="text-sm text-gray-500 mt-1">Large Shadow</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
+                        <div class="text-center">
+                            <p class="font-mono text-sm text-gray-700">shadow-xl</p>
+                            <p class="text-sm text-gray-500 mt-1">Extra Large Shadow (Hover)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200">
+                        <div class="text-center">
+                            <p class="font-mono text-sm text-gray-700">backdrop-blur-md</p>
+                            <p class="text-sm text-gray-500 mt-1">Backdrop Blur Effect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atoms Section -->
+    <section id="atoms" class="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-4">
+                    Atoms
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Basic Building Blocks</h2>
+                <p class="text-xl text-gray-600">Fundamental UI elements</p>
+            </div>
+
+            <!-- Typography -->
+            <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Typography</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h1 class="text-5xl font-bold text-gray-900">Heading 1 - Bold 5xl</h1>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-5xl font-bold text-gray-900</p>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-900">Heading 2 - Bold 4xl</h2>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-4xl font-bold text-gray-900</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Heading 3 - Bold 2xl</h3>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-2xl font-bold text-gray-900</p>
+                    </div>
+                    <div>
+                        <p class="text-xl text-gray-600">Body Large - Regular xl gray-600</p>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-xl text-gray-600</p>
+                    </div>
+                    <div>
+                        <p class="text-base text-gray-600">Body Regular - Regular base gray-600</p>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-base text-gray-600</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Small Text - Regular sm gray-500</p>
+                        <p class="text-sm text-gray-500 font-mono mt-1">text-sm text-gray-500</p>
+                    </div>
+                    <div>
+                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-4xl font-bold">
+                            Gradient Text
+                        </span>
+                        <p class="text-sm text-gray-500 font-mono mt-1">bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Molecules Section -->
+    <section id="molecules" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+                    Molecules
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Component Combinations</h2>
+                <p class="text-xl text-gray-600">Atoms combined into functional components</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Buttons</h3>
+
+                <!-- Default Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Default (Primary)</p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-8 px-3 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                            Small
+                        </button>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                            Default
+                        </button>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-10 px-6 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                            Large
+                        </button>
+                        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all size-9 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                            <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Destructive Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Destructive</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 bg-red-600 text-white shadow-sm hover:bg-red-700">
+                            Delete
+                        </button>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 bg-red-600 text-white shadow-sm hover:bg-red-700" disabled style="opacity: 0.5; pointer-events: none;">
+                            Disabled
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Outline Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Outline</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 border bg-white shadow-sm hover:bg-gray-50">
+                            Outline
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Secondary Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Secondary</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 bg-gray-100 text-gray-900 shadow-sm hover:bg-gray-200">
+                            Secondary
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ghost Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Ghost</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 hover:bg-gray-100">
+                            Ghost
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Link Variant -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Link</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 text-gray-900 underline-offset-4 hover:underline">
+                            Link Button
+                        </button>
+                    </div>
+                </div>
+
+                <!-- With Icons -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">With Icons</p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-3 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                            <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                            </svg>
+                            Watch Demo
+                        </button>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-3 border bg-white shadow-sm hover:bg-gray-50">
+                            Start Free Trial
+                            <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Fields -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Input Fields</h3>
+
+                <!-- Basic Input -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Basic Input</p>
+                    <div class="w-full max-w-md">
+                        <label for="input-basic" class="block font-medium text-gray-900 text-base mb-2">
+                            Project Name
+                        </label>
+                        <input
+                            id="input-basic"
+                            type="text"
+                            placeholder="Enter project name"
+                            class="flex w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400"
+                        />
+                    </div>
+                </div>
+
+                <!-- Input with Tooltip -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Input with Info Tooltip</p>
+                    <div class="w-full max-w-md">
+                        <div class="flex items-center mb-2">
+                            <label for="input-tooltip" class="block font-medium text-gray-900 text-base">
+                                Budget Range
+                            </label>
+                            <div class="relative inline-block ml-1.5 group">
+                                <svg class="w-4 h-4 text-gray-400 cursor-help" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                </svg>
+                                <div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block w-48 px-3 py-2 text-xs text-white bg-gray-900 rounded-lg shadow-lg z-10">
+                                    Specify the budget range for this project
+                                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <input
+                            id="input-tooltip"
+                            type="text"
+                            placeholder="$10,000 - $50,000"
+                            class="flex w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400"
+                        />
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Error State</p>
+                    <div class="w-full max-w-md">
+                        <label for="input-error" class="block font-medium text-gray-900 text-base mb-2">
+                            Email Address
+                        </label>
+                        <input
+                            id="input-error"
+                            type="email"
+                            placeholder="you@example.com"
+                            class="flex w-full rounded-lg border border-red-500 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 ring-2 ring-red-200 focus:outline-none focus:ring-2 focus:ring-red-300 focus:border-red-500"
+                        />
+                        <p class="text-sm text-red-600 mt-1">Please enter a valid email address</p>
+                    </div>
+                </div>
+
+                <!-- Disabled State -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Disabled State</p>
+                    <div class="w-full max-w-md">
+                        <label for="input-disabled" class="block font-medium text-gray-400 text-base mb-2">
+                            Read Only Field
+                        </label>
+                        <input
+                            id="input-disabled"
+                            type="text"
+                            value="Cannot edit this field"
+                            disabled
+                            class="flex w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all opacity-50 cursor-not-allowed"
+                        />
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Textarea</p>
+                    <div class="w-full max-w-md">
+                        <label for="textarea-basic" class="block font-medium text-gray-900 text-base mb-2">
+                            Project Description
+                        </label>
+                        <textarea
+                            id="textarea-basic"
+                            rows="4"
+                            placeholder="Describe your project in detail..."
+                            class="flex w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400 resize-y"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- Textarea with Character Count -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Textarea with Character Count</p>
+                    <div class="w-full max-w-md">
+                        <label for="textarea-count" class="block font-medium text-gray-900 text-base mb-2">
+                            Key Messaging
+                        </label>
+                        <textarea
+                            id="textarea-count"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Enter key messaging..."
+                            class="flex w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400 resize-y"
+                        ></textarea>
+                        <div class="flex justify-end mt-1">
+                            <span class="text-xs text-gray-400"><span id="char-count">0</span> / 500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Cards</h3>
+
+                <!-- Basic Card -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Basic Card</p>
+                    <div class="bg-white border rounded-xl p-6 shadow-sm max-w-md">
+                        <h4 class="text-lg font-semibold mb-2">Card Title</h4>
+                        <p class="text-gray-600">This is a basic card component with title and description.</p>
+                    </div>
+                </div>
+
+                <!-- Card with Header and Footer -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Card with Header & Footer</p>
+                    <div class="bg-white border rounded-xl shadow-sm max-w-md flex flex-col gap-6">
+                        <div class="px-6 pt-6">
+                            <div class="font-semibold leading-none mb-1.5">Project Overview</div>
+                            <div class="text-gray-500 text-sm">Review your project details</div>
+                        </div>
+                        <div class="px-6">
+                            <p class="text-gray-700">This card demonstrates the header, content, and footer sections working together in a cohesive layout.</p>
+                        </div>
+                        <div class="flex items-center px-6 pb-6 border-t pt-6">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 bg-gray-900 text-white shadow-sm hover:bg-gray-800">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card with Action -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Card with Action Button</p>
+                    <div class="bg-white border rounded-xl shadow-sm max-w-md flex flex-col gap-6">
+                        <div class="px-6 pt-6 grid auto-rows-min grid-cols-[1fr_auto] items-start gap-1.5">
+                            <div>
+                                <div class="font-semibold leading-none mb-1.5">Notification Settings</div>
+                                <div class="text-gray-500 text-sm">Manage how you receive updates</div>
+                            </div>
+                            <button class="col-start-2 row-span-2 row-start-1 self-start justify-self-end inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-8 px-3 hover:bg-gray-100">
+                                Edit
+                            </button>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <p class="text-gray-700">Configure your notification preferences for this project.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badges -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Badges</h3>
+
+                <!-- Default Badges -->
+                <div class="mb-6">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Default</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-900 text-white px-2 py-0.5 text-xs font-medium">
+                            Default
+                        </span>
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-900 text-white px-2 py-0.5 text-xs font-medium gap-1">
+                            <svg class="size-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            With Icon
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Secondary Badges -->
+                <div class="mb-6">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Secondary</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-100 text-gray-900 px-2 py-0.5 text-xs font-medium">
+                            Secondary
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Destructive Badges -->
+                <div class="mb-6">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Destructive</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-red-600 text-white px-2 py-0.5 text-xs font-medium">
+                            Error
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Outline Badges -->
+                <div class="mb-6">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Outline</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center justify-center rounded-md border border-gray-300 text-gray-900 px-2 py-0.5 text-xs font-medium">
+                            Outline
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Status Badges -->
+                <div class="mb-6">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Status Examples</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 text-white px-2 py-0.5 text-xs font-medium">
+                            Active
+                        </span>
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-yellow-600 text-white px-2 py-0.5 text-xs font-medium">
+                            Pending
+                        </span>
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 text-white px-2 py-0.5 text-xs font-medium">
+                            In Progress
+                        </span>
+                        <span class="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-400 text-white px-2 py-0.5 text-xs font-medium">
+                            Archived
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sliders -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Sliders</h3>
+
+                <!-- Basic Slider -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Basic Range Slider</p>
+                    <div class="max-w-md">
+                        <label class="block text-base font-medium text-gray-900 mb-2">Brand Tone</label>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-gray-500 w-20 text-right">Formal</span>
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                value="50"
+                                class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-900 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gray-900 [&::-moz-range-thumb]:border-none"
+                                id="slider-1"
+                            />
+                            <span class="text-sm text-gray-500 w-20">Playful</span>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="text-xs text-gray-400">Value: <span id="slider-1-value">50</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multiple Sliders -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Multiple Sliders</p>
+                    <div class="max-w-md space-y-4">
+                        <div>
+                            <label class="block text-base font-medium text-gray-900 mb-2">Formality</label>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-500 w-20 text-right">Casual</span>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="40"
+                                    class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-900 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gray-900 [&::-moz-range-thumb]:border-none"
+                                    id="slider-2"
+                                />
+                                <span class="text-sm text-gray-500 w-20">Professional</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-gray-900 mb-2">Visual Style</label>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-500 w-20 text-right">Minimal</span>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="60"
+                                    class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-900 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gray-900 [&::-moz-range-thumb]:border-none"
+                                    id="slider-3"
+                                />
+                                <span class="text-sm text-gray-500 w-20">Expressive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chip Selector -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Chip Selector</h3>
+
+                <!-- Basic Chip Selector -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Multi-Select Chips</p>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 max-w-2xl">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="text-base font-semibold text-gray-900">Project Type</h4>
+                        </div>
+
+                        <!-- Selected Chips -->
+                        <div class="flex flex-wrap gap-2 mb-3" id="selected-chips">
+                            <div class="flex items-center gap-1 rounded-full p-1 pl-3 transition-all bg-gray-900 text-white shadow-sm">
+                                <span class="text-sm font-medium">Website</span>
+                                <button class="w-5 h-5 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" onclick="removeChip(this)">
+                                    ×
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-1 rounded-full p-1 pl-3 transition-all bg-gray-200 text-gray-900">
+                                <span class="text-sm font-medium">Mobile App</span>
+                                <button class="w-5 h-5 rounded-full flex items-center justify-center bg-gray-300 text-gray-600 hover:bg-red-100 hover:text-red-600 transition-colors" onclick="removeChip(this)">
+                                    ×
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Available Options -->
+                        <div class="flex flex-wrap gap-2 border-t border-gray-300 pt-3">
+                            <button class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors" onclick="addChip(this)">
+                                + Campaign
+                            </button>
+                            <button class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors" onclick="addChip(this)">
+                                + Brand Identity
+                            </button>
+                            <button class="px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors" onclick="addChip(this)">
+                                + Print Design
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chip States -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Chip States</p>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="flex items-center gap-1 rounded-full p-1 pl-3 bg-gray-200 text-gray-900">
+                            <span class="text-sm font-medium">Incomplete</span>
+                            <button class="w-5 h-5 rounded-full flex items-center justify-center bg-gray-300 text-gray-600 hover:bg-red-100 hover:text-red-600">
+                                ×
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-1 rounded-full p-1 pl-3 bg-gray-900 text-white shadow-sm">
+                            <span class="text-sm font-medium">Completed</span>
+                            <button class="w-5 h-5 rounded-full flex items-center justify-center hover:bg-white/20">
+                                ×
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-1 rounded-full p-1 pl-3 bg-green-600 text-white shadow-sm">
+                            <svg class="size-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm font-medium">Active</span>
+                            <button class="w-5 h-5 rounded-full flex items-center justify-center hover:bg-white/20">
+                                ×
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisms Section -->
+    <section id="organisms" class="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-4">
+                    Organisms
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Complex Components</h2>
+                <p class="text-xl text-gray-600">Molecules assembled into interface sections</p>
+            </div>
+
+            <!-- Problem Cards -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Problem Statement Cards</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Red Problem Card -->
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-8 w-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">30% Time Wasted</h3>
+                        <p class="text-gray-600 mb-4">
+                            Teams waste nearly one-third of their project time on poor briefing and endless revisions
+                        </p>
+                        <div class="text-3xl font-bold text-red-600">21-56 days</div>
+                        <p class="text-sm text-gray-500">Typical review cycles</p>
+                    </div>
+
+                    <!-- Orange Warning Card -->
+                    <div class="bg-orange-50 border border-orange-200 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-8 w-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Budget Drain</h3>
+                        <p class="text-gray-600 mb-4">
+                            Nearly one-third of marketing budgets squandered on misdirected work and rework
+                        </p>
+                        <div class="text-3xl font-bold text-orange-600">33%</div>
+                        <p class="text-sm text-gray-500">Of marketing spend wasted</p>
+                    </div>
+
+                    <!-- Yellow Caution Card -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="h-8 w-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Productivity Impact</h3>
+                        <p class="text-gray-600 mb-4">
+                            AI-powered workflows can increase team productivity by up to 40%
+                        </p>
+                        <div class="text-3xl font-bold text-yellow-600">40%</div>
+                        <p class="text-sm text-gray-500">Productivity increase potential</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Feature Cards</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-6 border-0 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Intake Forms</h3>
+                        <p class="text-gray-600 text-sm">Conditional logic guides clients through the right questions</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border-0 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Brief Generation</h3>
+                        <p class="text-gray-600 text-sm">Advanced AI transforms messy inputs into professional briefs</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border-0 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Client Approval Flow</h3>
+                        <p class="text-gray-600 text-sm">Branded review links let clients comment and approve seamlessly</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border-0 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="h-6 w-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Export & Integration</h3>
+                        <p class="text-gray-600 text-sm">Export polished PDFs or integrate with your tools</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Stat Cards</h3>
+                <p class="text-gray-600 mb-6">Dashboard metrics display in a 4-column grid with colored icon backgrounds</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Total Briefs -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">Total Briefs</p>
+                        <p class="text-3xl font-bold text-gray-900">23</p>
+                    </div>
+                    <!-- Active Projects -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">Active Projects</p>
+                        <p class="text-3xl font-bold text-gray-900">8</p>
+                    </div>
+                    <!-- Pending Review -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">Pending Review</p>
+                        <p class="text-3xl font-bold text-gray-900">5</p>
+                    </div>
+                    <!-- Completed -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">Completed</p>
+                        <p class="text-3xl font-bold text-gray-900">15</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">HTML Structure:</p>
+                    <pre class="text-xs text-gray-800 overflow-x-auto"><code>&lt;div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg"&gt;
+  &lt;div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center"&gt;
+    &lt;!-- Icon SVG --&gt;
+  &lt;/div&gt;
+  &lt;p class="text-sm text-gray-600"&gt;Total Briefs&lt;/p&gt;
+  &lt;p class="text-3xl font-bold text-gray-900"&gt;23&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Brief List Items -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Brief List Items</h3>
+                <p class="text-gray-600 mb-6">Hierarchical list with parent/child relationships, status badges, and approval counters</p>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg space-y-3">
+                    <!-- Parent Item - Completed -->
+                    <div class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+                        <div class="flex items-center space-x-3 flex-1">
+                            <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Spring Marketing Campaign</h4>
+                                <p class="text-sm text-gray-500">Due: Mar 15, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Completed</span>
+                            <span class="text-sm font-semibold text-green-600">3/3</span>
+                        </div>
+                    </div>
+
+                    <!-- Parent Item - Pending -->
+                    <div class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+                        <div class="flex items-center space-x-3 flex-1">
+                            <svg class="h-5 w-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Website Redesign</h4>
+                                <p class="text-sm text-gray-500">Due: Apr 1, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Pending</span>
+                            <span class="text-sm font-semibold text-yellow-600">2/3</span>
+                        </div>
+                    </div>
+
+                    <!-- Child Item -->
+                    <div class="flex items-center justify-between p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg ml-8 hover:bg-blue-100 transition-colors">
+                        <div class="flex items-center space-x-3 flex-1">
+                            <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Homepage Design</h4>
+                                <p class="text-sm text-gray-500">Due: Mar 25, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">In Review</span>
+                            <span class="text-sm font-semibold text-blue-600">1/3</span>
+                        </div>
+                    </div>
+
+                    <!-- Parent Item - Draft -->
+                    <div class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+                        <div class="flex items-center space-x-3 flex-1">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Product Launch Brief</h4>
+                                <p class="text-sm text-gray-500">Due: May 10, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Draft</span>
+                            <span class="text-sm font-semibold text-gray-400">0/3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Status Colors:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• <strong>Completed:</strong> green-100 background, green-800 text</li>
+                        <li>• <strong>Pending:</strong> yellow-100 background, yellow-800 text</li>
+                        <li>• <strong>In Review:</strong> blue-100 background, blue-800 text</li>
+                        <li>• <strong>Draft:</strong> gray-100 background, gray-800 text</li>
+                        <li>• <strong>Child Items:</strong> blue-50 background, border-l-4 border-blue-500, ml-8 indent</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity Feed Items -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Activity Feed Items</h3>
+                <p class="text-gray-600 mb-6">User activity feed with avatars, status icons, and timestamps</p>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg space-y-4">
+                    <!-- Approved Activity -->
+                    <div class="flex items-start space-x-3 pb-4 border-b border-gray-100">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-sm font-semibold text-blue-700">SM</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-semibold text-gray-900">Sarah Miller</span>
+                                <svg class="h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Approved the Spring Campaign brief</p>
+                            <p class="text-xs text-gray-400 mt-1">2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Comment Activity -->
+                    <div class="flex items-start space-x-3 pb-4 border-b border-gray-100">
+                        <div class="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-sm font-semibold text-purple-700">JD</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-semibold text-gray-900">John Davis</span>
+                                <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Left a comment on Website Redesign</p>
+                            <p class="text-xs text-gray-400 mt-1">5 hours ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Edit Activity -->
+                    <div class="flex items-start space-x-3 pb-4 border-b border-gray-100">
+                        <div class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-sm font-semibold text-green-700">ER</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-semibold text-gray-900">Emily Roberts</span>
+                                <svg class="h-4 w-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Updated Product Launch Brief</p>
+                            <p class="text-xs text-gray-400 mt-1">1 day ago</p>
+                        </div>
+                    </div>
+
+                    <!-- View Activity -->
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-sm font-semibold text-gray-700">MK</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-semibold text-gray-900">Mike Kim</span>
+                                <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Viewed Homepage Design brief</p>
+                            <p class="text-xs text-gray-400 mt-1">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Avatar Colors:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• blue-100 / green-100 / purple-100 / gray-100 for avatar backgrounds</li>
+                        <li>• Matching darker shades for text (blue-700, green-700, etc.)</li>
+                        <li>• Icon colors: green (approved), blue (comment), orange (edit), gray (view)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Form Components -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Form Components</h3>
+                <p class="text-gray-600 mb-6">Complete form input set including file upload and voice input</p>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg space-y-6">
+                    <!-- Text Input -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Project Name</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter project name">
+                    </div>
+
+                    <!-- Date Picker -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Launch Date</label>
+                        <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Select Dropdown -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Project Type</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option>Select type...</option>
+                            <option>Campaign</option>
+                            <option>Website</option>
+                            <option>Brand Identity</option>
+                        </select>
+                    </div>
+
+                    <!-- Textarea with Counter -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Description</label>
+                        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="4" placeholder="Describe your project..."></textarea>
+                        <p class="text-xs text-gray-500 mt-1 text-right">0 / 500 characters</p>
+                    </div>
+
+                    <!-- File Upload Zone -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Upload Files</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors cursor-pointer">
+                            <svg class="h-12 w-12 text-gray-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                            </svg>
+                            <p class="text-gray-600 mb-1">Drop files here or click to browse</p>
+                            <p class="text-sm text-gray-400">PDF, DOC, PNG up to 10MB</p>
+                        </div>
+                    </div>
+
+                    <!-- Voice Input Card -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Voice Input</label>
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-purple-100 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="h-8 w-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold mb-1">Record Your Brief</h4>
+                                    <p class="text-sm opacity-90">Click to start recording</p>
+                                </div>
+                                <button class="bg-white text-purple-600 px-4 py-2 rounded-lg font-medium hover:bg-purple-50 transition-colors">
+                                    Start
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Form Styling:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• All inputs: border border-gray-300, focus:ring-2 focus:ring-blue-500</li>
+                        <li>• File upload: border-2 border-dashed with hover state</li>
+                        <li>• Voice input: Purple gradient background (from-purple-500 to-purple-600)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- File List Items -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">File List Items</h3>
+                <p class="text-gray-600 mb-6">File upload status display with icons and file sizes</p>
+                <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg space-y-3">
+                    <!-- Uploaded File -->
+                    <div class="flex items-center justify-between p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-green-100 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">brand-guidelines.pdf</p>
+                                <p class="text-sm text-gray-500">2.4 MB</p>
+                            </div>
+                        </div>
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Another Uploaded File -->
+                    <div class="flex items-center justify-between p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-green-100 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">logo-mockup.png</p>
+                                <p class="text-sm text-gray-500">1.2 MB</p>
+                            </div>
+                        </div>
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Pending File -->
+                    <div class="flex items-center justify-between p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-600">project-specs.docx</p>
+                                <p class="text-sm text-gray-400">Uploading...</p>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">File States:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• <strong>Uploaded:</strong> bg-green-50, border-green-200, green CheckCircle icon</li>
+                        <li>• <strong>Pending:</strong> bg-gray-50, border-gray-200, animated spinner</li>
+                        <li>• Icon backgrounds: green-100 for uploaded, gray-100 for pending</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Comment Threads -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Comment Thread</h3>
+                <p class="text-gray-600 mb-6">Review comments with colored borders based on comment type</p>
+                <div class="space-y-4">
+                    <!-- Positive Comment -->
+                    <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-semibold text-green-700">SM</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="font-semibold text-gray-900">Sarah Miller</span>
+                                        <span class="text-xs px-2 py-1 bg-white border border-gray-300 rounded-full text-gray-600">Executive Summary</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                                        </svg>
+                                        <span class="text-xs text-gray-500">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">Great work on this section! The objectives are clear and measurable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Comment -->
+                    <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-semibold text-blue-700">JD</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="font-semibold text-gray-900">John Davis</span>
+                                        <span class="text-xs px-2 py-1 bg-white border border-gray-300 rounded-full text-gray-600">Target Audience</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        <span class="text-xs text-gray-500">3 hours ago</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">Can we clarify the age range for the primary audience? This will help with the creative direction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revision Comment -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-orange-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-semibold text-orange-700">ER</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="font-semibold text-gray-900">Emily Roberts</span>
+                                        <span class="text-xs px-2 py-1 bg-white border border-gray-300 rounded-full text-gray-600">Deliverables</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-5 w-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                        </svg>
+                                        <span class="text-xs text-gray-500">1 day ago</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">We need to revise the timeline for the video deliverables. Can we extend by 2 weeks?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Response Comment -->
+                    <div class="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-sm font-semibold text-purple-700">MK</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="font-semibold text-gray-900">Mike Kim</span>
+                                        <span class="text-xs px-2 py-1 bg-white border border-gray-300 rounded-full text-gray-600">Deliverables</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-5 w-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                        </svg>
+                                        <span class="text-xs text-gray-500">1 day ago</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">@Emily Yes, I've updated the timeline. The new deadline is March 30th.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Comment Types:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• <strong>Positive:</strong> bg-green-50, border-l-4 border-green-500, ThumbsUp icon</li>
+                        <li>• <strong>Question:</strong> bg-blue-50, border-l-4 border-blue-500, MessageCircle icon</li>
+                        <li>• <strong>Revision:</strong> bg-orange-50, border-l-4 border-orange-500, AlertCircle icon</li>
+                        <li>• <strong>Response:</strong> bg-purple-50, border-l-4 border-purple-500, Send icon</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Inline Comment Indicators -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Inline Comment Indicators</h3>
+                <p class="text-gray-600 mb-6">Small colored circles positioned on content to show comments</p>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
+                    <!-- Sample Content with Indicators -->
+                    <div class="prose max-w-none">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Project Overview</h3>
+                        <div class="relative mb-4 p-4 bg-gray-50 rounded-lg">
+                            <p class="text-gray-700">This project aims to create a comprehensive marketing campaign for our new product launch targeting millennials and Gen Z consumers.</p>
+                            <!-- Positive Indicator -->
+                            <div class="absolute -right-2 top-2 bg-green-100 border-2 border-green-300 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                                <svg class="h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="relative mb-4 p-4 bg-gray-50 rounded-lg">
+                            <p class="text-gray-700">The campaign will run for 6 months with a budget of $500,000 allocated across digital and traditional media channels.</p>
+                            <!-- Question Indicator -->
+                            <div class="absolute -right-2 top-2 bg-blue-100 border-2 border-blue-300 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                                <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="relative p-4 bg-gray-50 rounded-lg">
+                            <p class="text-gray-700">Deliverables include video content, social media assets, and a landing page designed to convert visitors into customers.</p>
+                            <!-- Revision Indicator -->
+                            <div class="absolute -right-2 top-2 bg-orange-100 border-2 border-orange-300 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                                <svg class="h-4 w-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Indicator Styling:</p>
+                    <ul class="text-xs text-gray-800 space-y-1">
+                        <li>• Position: absolute -right-2 top-2</li>
+                        <li>• Positive: bg-green-100 border-2 border-green-300</li>
+                        <li>• Question: bg-blue-100 border-2 border-blue-300</li>
+                        <li>• Revision: bg-orange-100 border-2 border-orange-300</li>
+                        <li>• Hover: scale-110 transition-transform for feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Approval Modal -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Approval Modal</h3>
+                <p class="text-gray-600 mb-6">Success confirmation modal with backdrop</p>
+                <div class="relative h-96 bg-gray-100 rounded-xl overflow-hidden">
+                    <!-- Backdrop -->
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-8">
+                        <!-- Modal -->
+                        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 text-center">
+                            <!-- Success Icon -->
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Brief Approved!</h3>
+                            <p class="text-gray-600 mb-8">Your approval has been recorded. The project team has been notified and can now proceed with execution.</p>
+
+                            <!-- Actions -->
+                            <div class="flex gap-3">
+                                <button class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition-colors">
+                                    View Brief
+                                </button>
+                                <button class="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                                    Dashboard
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600 font-mono mb-2">Modal Structure:</p>
+                    <pre class="text-xs text-gray-800 overflow-x-auto"><code>&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"&gt;
+  &lt;div class="bg-white rounded-xl shadow-2xl max-w-md p-8"&gt;
+    &lt;div class="bg-green-100 w-16 h-16 rounded-full mx-auto"&gt;
+      &lt;!-- CheckCircle Icon --&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Brief Approved!&lt;/h3&gt;
+    &lt;p&gt;Description...&lt;/p&gt;
+    &lt;!-- Action Buttons --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Progress Indicators</h3>
+
+                <!-- Linear Progress -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Linear Progress Bar</p>
+                    <div class="max-w-md">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-gray-900">Overall Progress</span>
+                            <span class="text-sm font-medium text-gray-500">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step Progress -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Step Progress Indicator</p>
+                    <div class="max-w-2xl">
+                        <div class="flex items-center justify-between">
+                            <!-- Step 1 - Complete -->
+                            <div class="flex flex-col items-center flex-1">
+                                <div class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-semibold mb-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-xs text-gray-600 text-center">Overview</span>
+                            </div>
+                            <div class="flex-1 h-0.5 bg-green-600 -mt-5"></div>
+
+                            <!-- Step 2 - Active -->
+                            <div class="flex flex-col items-center flex-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2 ring-4 ring-blue-100">
+                                    2
+                                </div>
+                                <span class="text-xs text-gray-900 font-medium text-center">Details</span>
+                            </div>
+                            <div class="flex-1 h-0.5 bg-gray-300 -mt-5"></div>
+
+                            <!-- Step 3 - Incomplete -->
+                            <div class="flex flex-col items-center flex-1">
+                                <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center font-semibold mb-2">
+                                    3
+                                </div>
+                                <span class="text-xs text-gray-400 text-center">Review</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Score Meter -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Score Meters</p>
+                    <div class="grid md:grid-cols-2 gap-6 max-w-2xl">
+                        <!-- Clarity Score -->
+                        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="text-sm font-semibold text-gray-900">Clarity Score</h4>
+                                <span class="text-2xl font-bold text-green-600">82</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-green-600 h-3 rounded-full" style="width: 82%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Great! Your brief is clear and detailed.</p>
+                        </div>
+
+                        <!-- Brand Match -->
+                        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="text-sm font-semibold text-gray-900">Brand Match</h4>
+                                <span class="text-2xl font-bold text-yellow-600">65</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-yellow-600 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Good alignment with brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Pricing Cards</h3>
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Starter -->
+                    <div class="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-blue-300 transition-colors shadow-lg">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                            <p class="text-gray-600 mb-6">Perfect for small agencies</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold text-gray-900">$99</span>
+                                <span class="text-gray-600">/month</span>
+                            </div>
+                            <button class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors mb-6">
+                                Start Free Trial
+                            </button>
+                            <div class="text-left space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">5 briefs per month</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">AI-powered generation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">PDF export</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional (Featured) -->
+                    <div class="bg-white rounded-xl p-8 border-4 border-blue-500 relative shadow-xl">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-blue-600 text-white rounded-full text-sm font-medium">
+                            Most Popular
+                        </span>
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                            <p class="text-gray-600 mb-6">Best for growing agencies</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold text-gray-900">$299</span>
+                                <span class="text-gray-600">/month</span>
+                            </div>
+                            <button class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors mb-6">
+                                Start Free Trial
+                            </button>
+                            <div class="text-left space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">Unlimited briefs</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">Team collaboration</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">Priority support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-purple-300 transition-colors shadow-lg">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                            <p class="text-gray-600 mb-6">For large agencies</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold text-gray-900">Custom</span>
+                            </div>
+                            <button class="w-full px-6 py-3 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition-colors mb-6">
+                                Contact Sales
+                            </button>
+                            <div class="text-left space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">Everything in Professional</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">White-label branding</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-gray-700">API access</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section id="templates" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-4">
+                    Templates
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Layout Patterns</h2>
+                <p class="text-xl text-gray-600">Page-level layout structures from BriefFlow</p>
+            </div>
+
+            <!-- Navigation Template -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Navigation Bar</h3>
+                <div class="bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-4">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            BriefFlow
+                        </h1>
+                        <div class="flex items-center space-x-6 text-sm">
+                            <a href="#" class="text-gray-600 hover:text-gray-900">Features</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <button class="px-4 py-2 text-gray-600 hover:text-gray-900">Sign In</button>
+                            <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">Start Free Trial</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Template -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Hero Section</h3>
+                <div class="bg-gradient-to-br from-slate-50 via-white to-blue-50 rounded-xl p-12 border border-gray-200">
+                    <div class="text-center max-w-4xl mx-auto">
+                        <div class="inline-block px-4 py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-sm font-medium mb-6">
+                            🚀 New Feature Announcement
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                            Transform
+                            <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Messy Inputs</span>
+                            <br />into Approved Briefs
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Stop wasting weeks on brief revisions. Our AI-powered platform saves time, money, and sanity.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-lg">
+                                Watch Demo
+                            </button>
+                            <button class="px-8 py-4 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg font-medium">
+                                Start Free Trial
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Steps Template -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Process Steps</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-blue-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            01
+                        </div>
+                        <div class="text-4xl mb-4">📥</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Upload & Input</h3>
+                        <p class="text-gray-600">Clients fill guided forms and upload documents</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blue-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            02
+                        </div>
+                        <div class="text-4xl mb-4">🤖</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">AI Generates</h3>
+                        <p class="text-gray-600">Advanced AI creates professional briefs instantly</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blue-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            03
+                        </div>
+                        <div class="text-4xl mb-4">✅</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Review & Approve</h3>
+                        <p class="text-gray-600">Clients review and approve with ease</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section Template -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Call to Action</h3>
+                <div class="bg-gradient-to-r from-blue-600 to-purple-700 rounded-xl p-12 text-white text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Ready to Transform Your Briefing Process?
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90">
+                        Join hundreds of agencies saving time and money with AI-powered briefs
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="px-8 py-4 bg-white text-blue-600 hover:bg-gray-50 rounded-lg font-medium shadow-lg">
+                            Start Free Trial
+                        </button>
+                        <button class="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 rounded-lg font-medium">
+                            Book a Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Usage Guide -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8">Usage Guide</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Design Principles</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Consistent spacing using defined tokens (xs, sm, md, lg, xl, 2xl)</li>
+                        <li>• Use semantic color names from the palette</li>
+                        <li>• Follow typography scale for hierarchy</li>
+                        <li>• Apply shadows and borders consistently</li>
+                        <li>• Ensure all interactive elements have hover/focus states</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Component Library</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Atoms:</strong> Buttons, Badges, Inputs, Typography</li>
+                        <li>• <strong>Molecules:</strong> Cards, Input Groups, Chip Selectors</li>
+                        <li>• <strong>Organisms:</strong> Progress Bars, Score Meters, Step Indicators</li>
+                        <li>• All components support light/dark mode via CSS variables</li>
+                        <li>• Accessible markup with proper ARIA labels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">BriefFlow Design System v1.0 • Last updated: November 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update slider value displays
+        const slider1 = document.getElementById('slider-1');
+        const slider1Value = document.getElementById('slider-1-value');
+
+        if (slider1 && slider1Value) {
+            slider1.addEventListener('input', (e) => {
+                slider1Value.textContent = e.target.value;
+            });
+        }
+
+        const slider2 = document.getElementById('slider-2');
+        const slider3 = document.getElementById('slider-3');
+
+        // Add interactivity for other sliders if needed
+        [slider2, slider3].forEach(slider => {
+            if (slider) {
+                slider.addEventListener('input', (e) => {
+                    console.log(`Slider value: ${e.target.value}`);
+                });
+            }
+        });
+
+        // Chip Selector functions
+        function addChip(button) {
+            const chipText = button.textContent.replace('+ ', '').trim();
+            const container = document.getElementById('selected-chips');
+
+            const chip = document.createElement('div');
+            chip.className = 'flex items-center gap-1 rounded-full p-1 pl-3 transition-all bg-gray-200 text-gray-900';
+            chip.innerHTML = `
+                <span class="text-sm font-medium">${chipText}</span>
+                <button class="w-5 h-5 rounded-full flex items-center justify-center bg-gray-300 text-gray-600 hover:bg-red-100 hover:text-red-600 transition-colors" onclick="removeChip(this)">
+                    ×
+                </button>
+            `;
+
+            container.appendChild(chip);
+            button.style.display = 'none';
+        }
+
+        function removeChip(button) {
+            const chip = button.parentElement;
+            chip.remove();
+        }
+
+        // Textarea character count
+        const textareaCount = document.getElementById('textarea-count');
+        const charCount = document.getElementById('char-count');
+
+        if (textareaCount && charCount) {
+            textareaCount.addEventListener('input', (e) => {
+                charCount.textContent = e.target.value.length;
+            });
+        }
+    </script>
+
+</body>
+</html>
