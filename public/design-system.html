@@ -1390,6 +1390,315 @@
         </div>
     </section>
 
+    <!-- Base Modal Structure -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Base Modal Structure</h3>
+                <p class="text-gray-600 mb-6">Foundation pattern for all modal dialogs. Features fixed overlay, centered container, and keyboard/click interactions.</p>
+
+                <!-- Demo Button -->
+                <div class="mb-8">
+                    <button id="base-modal-trigger" class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                        Open Base Modal
+                    </button>
+                </div>
+
+                <!-- Modal Anatomy Diagram -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Modal Anatomy</p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><span class="font-semibold text-gray-900">1. Overlay:</span> <code class="bg-gray-200 px-2 py-1 rounded text-xs">fixed inset-0 bg-black/50 backdrop-blur-sm</code></p>
+                            <p><span class="font-semibold text-gray-900">2. Container:</span> <code class="bg-gray-200 px-2 py-1 rounded text-xs">max-w-2xl bg-white rounded-xl shadow-lg</code></p>
+                            <p><span class="font-semibold text-gray-900">3. Header:</span> Title + Close button (border-bottom)</p>
+                            <p><span class="font-semibold text-gray-900">4. Content:</span> Scrollable area with <code class="bg-gray-200 px-2 py-1 rounded text-xs">overflow-y-auto</code></p>
+                            <p><span class="font-semibold text-gray-900">5. Footer:</span> Action buttons (border-top)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Key Features</p>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Click outside to close (overlay click handler)</li>
+                        <li>ESC key to close (keyboard accessibility)</li>
+                        <li>Backdrop blur effect for visual focus</li>
+                        <li>Max-height with scrollable content (90vh)</li>
+                        <li>Z-index layering (z-50 for modals)</li>
+                        <li>Click event propagation stopped on modal content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Draft Modal Variant -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">AI Draft Modal Variant</h3>
+                <p class="text-gray-600 mb-6">Specialized modal for displaying AI-generated brief content with loading and content states.</p>
+
+                <!-- Demo Button -->
+                <div class="mb-8">
+                    <button id="ai-modal-trigger" class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                        Open AI Draft Modal
+                    </button>
+                </div>
+
+                <!-- States Preview -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Modal States</p>
+
+                    <!-- Loading State -->
+                    <div class="mb-6">
+                        <p class="text-xs font-semibold text-gray-600 mb-2">Loading State</p>
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 max-w-2xl">
+                            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                                <h3 class="text-xl font-semibold text-gray-900">AI-Generated Draft Summary</h3>
+                                <button class="text-gray-500 hover:text-gray-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex flex-col items-center justify-center text-center text-gray-500 min-h-[200px]">
+                                    <svg class="animate-spin h-8 w-8 text-blue-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    <p class="font-medium text-gray-900">Synthesizing your brief...</p>
+                                    <p class="text-sm mt-1">turning strategy into structure.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                                    Close
+                                </button>
+                                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                                    Copy to Clipboard
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content State -->
+                    <div class="mb-6">
+                        <p class="text-xs font-semibold text-gray-600 mb-2">Content State</p>
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 max-w-2xl">
+                            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                                <h3 class="text-xl font-semibold text-gray-900">AI-Generated Draft Summary</h3>
+                                <button class="text-gray-500 hover:text-gray-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="p-8">
+                                <div class="prose prose-sm max-w-none text-gray-900">
+                                    <h4 class="text-lg font-semibold mb-2">Project Overview</h4>
+                                    <p class="text-gray-700 mb-4">This is a sample AI-generated brief showing how content is displayed after synthesis. The content area is scrollable and supports rich HTML formatting.</p>
+                                    <h4 class="text-lg font-semibold mb-2">Key Objectives</h4>
+                                    <ul class="list-disc list-inside text-gray-700">
+                                        <li>Objective one with detailed description</li>
+                                        <li>Objective two with context</li>
+                                        <li>Objective three with deliverables</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                                    Close
+                                </button>
+                                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                                    Copy to Clipboard
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Actions Documentation -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Footer Actions</p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><span class="font-semibold text-gray-900">Close:</span> Tertiary button to dismiss modal</p>
+                            <p><span class="font-semibold text-gray-900">Copy to Clipboard:</span> Secondary button to copy draft content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation Notes -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Implementation Notes</p>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Modal title: "AI-Generated Draft Summary"</li>
+                        <li>Loading state shows spinner with "Synthesizing your brief..." message</li>
+                        <li>Content state renders HTML with prose styling</li>
+                        <li>Footer has gray background (bg-surface) to distinguish from content</li>
+                        <li>Max width: 2xl (max-w-2xl)</li>
+                        <li>Max height: 90vh with scrollable content area</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal Variant -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Confirmation Modal Variant</h3>
+                <p class="text-gray-600 mb-6">Used for destructive or important actions requiring user confirmation. Smaller, centered layout with warning icon.</p>
+
+                <!-- Demo Button -->
+                <div class="mb-8">
+                    <button id="confirm-modal-trigger" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                        Open Confirmation Modal
+                    </button>
+                </div>
+
+                <!-- Preview -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Example: Change Project Type</p>
+                    <div class="max-w-md mx-auto border border-gray-200 rounded-lg p-8 text-center bg-white shadow-sm">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-yellow-50">
+                            <svg class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-gray-900">Change Project Type?</h3>
+                        <div class="mt-2 text-sm text-gray-600">
+                            <p>Switching project types will update relevant examples and guidance to better match your new selection.</p>
+                            <p class="font-medium text-gray-900 mt-2">Your existing content will be preserved.</p>
+                        </div>
+                        <div class="mt-6 flex justify-end gap-2">
+                            <button class="px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors">
+                                Cancel
+                            </button>
+                            <button class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                                Confirm Change
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Characteristics -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Key Characteristics</p>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Smaller width (max-w-md) for focused attention</li>
+                        <li>Icon with colored background (warning/error/info)</li>
+                        <li>Clear, concise messaging about consequences</li>
+                        <li>Two-button layout: Secondary (Cancel) + Primary (Action)</li>
+                        <li>Action button color indicates severity (red for destructive)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Drawer Variant -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Side Drawer Variant</h3>
+                <p class="text-gray-600 mb-6">Slides in from the right edge for contextual actions, filters, or forms. Provides focused workspace without leaving current page.</p>
+
+                <!-- Demo Button -->
+                <div class="mb-8">
+                    <button id="drawer-trigger" class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                        Open Side Drawer
+                    </button>
+                </div>
+
+                <!-- Static Preview -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Static Preview: Brief Settings</p>
+                    <div class="border border-gray-200 rounded-lg overflow-hidden bg-gray-50">
+                        <div class="max-w-md ml-auto border-l border-gray-300 bg-white shadow-xl">
+                            <!-- Header -->
+                            <div class="flex items-center justify-between p-4 border-b border-gray-200">
+                                <h3 class="text-lg font-bold text-gray-900">Brief Settings</h3>
+                                <button class="text-gray-600 hover:text-gray-900 p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Content -->
+                            <div class="p-4 space-y-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Project Type</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900">
+                                        <option>Marketing Campaign</option>
+                                        <option>Product Launch</option>
+                                        <option>Content Strategy</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Status</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900">
+                                        <option>Draft</option>
+                                        <option>In Review</option>
+                                        <option>Approved</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" class="w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900">
+                                        <span class="text-sm text-gray-700">Enable AI suggestions</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation States -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Animation States</p>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Closed:</strong> translate-x-full (100% off-screen right)</p>
+                            <div class="h-2 bg-gray-200 rounded-full w-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Opening:</strong> Slides in with transform transition (300ms ease-in-out)</p>
+                            <div class="h-2 bg-blue-400 rounded-full w-3/4 transition-all"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Open:</strong> translate-x-0 (fully visible)</p>
+                            <div class="h-2 bg-green-500 rounded-full w-full"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Backdrop:</strong> Fades in/out with opacity transition (bg-black/30 backdrop-blur-sm)</p>
+                            <div class="h-2 bg-gray-900/30 rounded-full w-full backdrop-blur-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Characteristics -->
+                <div class="mb-8">
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Key Characteristics</p>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Slides in from right edge (fixed positioning)</li>
+                        <li>Maximum width of 24rem (max-w-md) for comfortable form width</li>
+                        <li>Full viewport height with internal scroll for long content</li>
+                        <li>Semi-transparent backdrop (black/30 with blur) for context</li>
+                        <li>Close via X button, backdrop click, or ESC key</li>
+                        <li>Smooth 300ms transform animation (ease-in-out)</li>
+                        <li>Header with title and close button, scrollable content area</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Organisms Section -->
     <section id="organisms" class="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2439,6 +2748,176 @@
     </footer>
     </div><!-- End Main Content Wrapper -->
 
+    <!-- Side Drawer Demo -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+    <div id="demo-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-lg border-l border-gray-200 z-40 transform transition-transform duration-300 ease-in-out translate-x-full">
+        <div class="flex flex-col h-full">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900">Brief Settings</h3>
+                <button id="drawer-close" class="text-gray-600 hover:text-gray-900 p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Content -->
+            <div class="flex-grow overflow-y-auto p-4">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Project Type</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900">
+                            <option>Marketing Campaign</option>
+                            <option>Product Launch</option>
+                            <option>Content Strategy</option>
+                            <option>Brand Development</option>
+                            <option>Event Planning</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Status</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900">
+                            <option>Draft</option>
+                            <option>In Review</option>
+                            <option>Approved</option>
+                            <option>Archived</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Priority</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                            <option>Urgent</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" checked class="w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900">
+                            <span class="text-sm text-gray-700">Enable AI suggestions</span>
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900">
+                            <span class="text-sm text-gray-700">Auto-save changes</span>
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" checked class="w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900">
+                            <span class="text-sm text-gray-700">Email notifications</span>
+                        </label>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <button class="w-full px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Templates (Hidden) -->
+    <!-- Base Modal -->
+    <div id="base-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onclick="closeModal('base-modal')">
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-2xl max-h-[90vh] flex flex-col border border-gray-200" onclick="event.stopPropagation()">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-gray-900">Base Modal Example</h2>
+                <button onclick="closeModal('base-modal')" class="text-gray-500 hover:text-gray-900 transition-colors">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <p class="text-gray-600 mb-4">This is the base modal structure. It includes:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Fixed overlay with backdrop blur</li>
+                    <li>Centered container with max-width</li>
+                    <li>Close button in header</li>
+                    <li>Scrollable content area</li>
+                    <li>Click outside or press ESC to close</li>
+                </ul>
+                <p class="text-gray-600 mt-4">Try clicking outside the modal or pressing ESC to close.</p>
+            </div>
+            <div class="p-4 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+                <button onclick="closeModal('base-modal')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-white transition-colors">
+                    Close
+                </button>
+                <button class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    Action
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Draft Modal -->
+    <div id="ai-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onclick="closeModal('ai-modal')">
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-2xl max-h-[90vh] flex flex-col border border-gray-200" onclick="event.stopPropagation()">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-gray-900">AI-Generated Draft Summary</h2>
+                <button onclick="closeModal('ai-modal')" class="text-gray-500 hover:text-gray-900 transition-colors">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto">
+                <div id="ai-loading" class="flex flex-col items-center justify-center text-center text-gray-600 min-h-[200px]">
+                    <svg class="animate-spin h-8 w-8 text-gray-900 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <p class="font-medium text-gray-900">Synthesizing your brief...</p>
+                    <p class="text-sm text-gray-500 mt-1">turning strategy into structure.</p>
+                </div>
+                <div id="ai-content" class="hidden prose prose-sm max-w-none">
+                    <h3>Brief Summary</h3>
+                    <p><strong>Project:</strong> Website Redesign</p>
+                    <p><strong>Objective:</strong> Drive 25% increase in user engagement through improved UX</p>
+                    <ul>
+                        <li>Target: Tech professionals aged 25-40</li>
+                        <li>Key Message: Innovation meets simplicity</li>
+                        <li>Timeline: 8 weeks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-4 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+                <button onclick="closeModal('ai-modal')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-white transition-colors">
+                    Close
+                </button>
+                <button class="px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors">
+                    Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onclick="closeModal('confirm-modal')">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-md border border-gray-200" onclick="event.stopPropagation()">
+            <div class="p-8 text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-yellow-50">
+                    <svg class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-gray-900">Change Project Type?</h3>
+                <div class="mt-2 text-sm text-gray-600">
+                    <p>Switching project types will update relevant examples and guidance to better match your new selection.</p>
+                    <p class="font-medium text-gray-900 mt-2">Your existing content will be preserved.</p>
+                </div>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 flex justify-end gap-2 border-t border-gray-200">
+                <button onclick="closeModal('confirm-modal')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors">
+                    Cancel
+                </button>
+                <button onclick="confirmAction()" class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                    Confirm Change
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle
         function toggleMobileMenu() {
@@ -2453,6 +2932,45 @@
 
         // Setup mobile menu button
         document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+        // Side Drawer Demo
+        const drawerTrigger = document.getElementById('drawer-trigger');
+        const demoDrawer = document.getElementById('demo-drawer');
+        const drawerBackdrop = document.getElementById('drawer-backdrop');
+        const drawerClose = document.getElementById('drawer-close');
+
+        function openDrawer() {
+            demoDrawer.classList.remove('translate-x-full');
+            demoDrawer.classList.add('translate-x-0');
+            drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            drawerBackdrop.classList.add('opacity-100');
+        }
+
+        function closeDrawer() {
+            demoDrawer.classList.remove('translate-x-0');
+            demoDrawer.classList.add('translate-x-full');
+            drawerBackdrop.classList.remove('opacity-100');
+            drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        if (drawerTrigger) {
+            drawerTrigger.addEventListener('click', openDrawer);
+        }
+
+        if (drawerClose) {
+            drawerClose.addEventListener('click', closeDrawer);
+        }
+
+        if (drawerBackdrop) {
+            drawerBackdrop.addEventListener('click', closeDrawer);
+        }
+
+        // Close drawer on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && demoDrawer.classList.contains('translate-x-0')) {
+                closeDrawer();
+            }
+        });
 
         // Active navigation link tracking
         function updateActiveNavLink() {
@@ -2562,6 +3080,71 @@
                 console.log('Selected:', this.dataset.value);
             });
         });
+
+        // Modal Management
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent body scroll
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore body scroll
+            }
+        }
+
+        // AI Modal specific - simulate loading
+        function openAiModal() {
+            openModal('ai-modal');
+            const loading = document.getElementById('ai-loading');
+            const content = document.getElementById('ai-content');
+
+            loading.classList.remove('hidden');
+            content.classList.add('hidden');
+
+            // Simulate 2 second loading
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                content.classList.remove('hidden');
+            }, 2000);
+        }
+
+        // Confirmation action
+        function confirmAction() {
+            alert('Action confirmed! In real app, this would trigger the change.');
+            closeModal('confirm-modal');
+        }
+
+        // ESC key to close modals and drawer
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal('base-modal');
+                closeModal('ai-modal');
+                closeModal('confirm-modal');
+                closeDrawer();
+            }
+        });
+
+        // Modal trigger buttons
+        const baseModalTrigger = document.getElementById('base-modal-trigger');
+        if (baseModalTrigger) {
+            baseModalTrigger.addEventListener('click', () => openModal('base-modal'));
+        }
+
+        const aiModalTrigger = document.getElementById('ai-modal-trigger');
+        if (aiModalTrigger) {
+            aiModalTrigger.addEventListener('click', openAiModal);
+        }
+
+        const confirmModalTrigger = document.getElementById('confirm-modal-trigger');
+        if (confirmModalTrigger) {
+            confirmModalTrigger.addEventListener('click', () => openModal('confirm-modal'));
+        }
     </script>
 
 </body>
