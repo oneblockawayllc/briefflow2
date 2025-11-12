@@ -1,0 +1,10 @@
+[build]
+  base = "."
+  command = "npm run build:landing"
+  publish = "apps/landing/.next"
+
+[dev]
+  command = "npm run dev"
+  framework = "next"
+  targetPort = 3000
+

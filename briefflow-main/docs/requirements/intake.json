@@ -1,0 +1,21 @@
+{
+  "project": {
+    "name": "Summer Launch 2026",
+    "category": "Campaign",
+    "owner": "wally@oneblockaway.co"
+  },
+  "objectives": [
+    "Increase Gen Z awareness",
+    "Drive 20% uplift in signups"
+  ],
+  "audience": {
+    "primary": "Gen Z, 18–24, mobile-first",
+    "insights": ["Values authenticity", "Video natives"]
+  },
+  "deliverables": [
+    {"type": "Video", "channel": "TikTok", "specs": "15s, 9:16"},
+    {"type": "Static", "channel": "Instagram", "specs": "1080x1350"}
+  ],
+  "timeline": "Launch June 2026",
+  "budget": "$30k–40k"
+}

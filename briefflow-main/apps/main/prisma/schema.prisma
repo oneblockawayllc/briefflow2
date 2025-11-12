@@ -1,0 +1,36 @@
+// SQLite for local dev; switch to Postgres later
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Project {
+  id        String  @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  briefs    Brief[]
+}
+
+model Brief {
+  id         String   @id @default(cuid())
+  projectId  String
+  project    Project  @relation(fields: [projectId], references: [id])
+  version    Int      @default(1)
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  versions   BriefVersion[]
+}
+
+model BriefVersion {
+  id        String   @id @default(cuid())
+  briefId   String
+  brief     Brief    @relation(fields: [briefId], references: [id])
+  version   Int
+  content   String
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,32 @@
+{
+  "name": "briefflow-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/main",
+    "dev:main": "npm run dev --workspace=apps/main",
+    "dev:landing": "npm run dev --workspace=apps/landing",
+    "dev:all": "concurrently \"npm run dev:main\" \"npm run dev:landing --port=3001\"",
+    "up": "node scripts/dev-all.mjs",
+    "build": "npm run build --workspaces",
+    "build:main": "npm run build --workspace=apps/main",
+    "build:landing": "npm run build --workspace=apps/landing",
+    "start": "npm run start --workspaces",
+    "start:main": "npm run start --workspace=apps/main",
+    "start:landing": "npm run start --workspace=apps/landing",
+    "prisma:generate": "npm run prisma:generate --workspace=apps/main",
+    "prisma:migrate": "npm run prisma:migrate --workspace=apps/main",
+    "test": "npm run test --workspaces",
+    "test:main": "npm run test --workspace=apps/main",
+    "test:landing": "npm run test --workspace=apps/landing",
+    "lint": "npm run lint --workspaces",
+    "lint:main": "npm run lint --workspace=apps/main",
+    "lint:landing": "npm run lint --workspace=apps/landing"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Project Brief Creation Tool",
+  "description": "A modern, web-based wizard to create comprehensive project briefs with AI-powered assistance. This tool guides users through key sections like objectives, audience, and deliverables, providing real-time feedback and a clarity score to ensure a high-quality brief.",
+  "requestFramePermissions": []
+}
